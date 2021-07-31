@@ -49,13 +49,14 @@ int display (char NAME[50], char ZODIAK[15], DATE DT) {
 int main(void) {
 
     DATE DT;
-    char NAME[50], OPTION;
+    char NAME[50], OPTION[4];
 
     puts("===== Program Untuk Mengetahui Zodiak =====");
     do {
 
+        puts("===========================================");
         printf("Masukan Nama: ");
-        scanf("%[^\n]", &NAME);
+        scanf("%s", &NAME);
         printf("Masukan Tanggal Lahir (dd/mm/yyyy): ");
         scanf("%d/%d/%d", &DT.DAY, &DT.MONTH, &DT.YEAR);
 
@@ -86,10 +87,10 @@ int main(void) {
             display(NAME, "Tidak Diketahui", DT);
         } 
 
-        printf("Apakah anda ingin mencoba lagi? (y/n): "); 
-        scanf("%c", )
+        printf("Apakah anda ingin mencoba lagi? (yes/no): "); 
+        scanf("%s", &OPTION);
 
-    } while (OPTION == 'y' || OPTION == 'Y');
+    } while ((strcmp(OPTION, "yes") == 0)  || (strcmp(OPTION, "YES") == 0));
    
     return 0;
 }
